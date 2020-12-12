@@ -1,3 +1,7 @@
+# Configs
+config-sandbox.json
+config-prod.json
+
 # Logs
 logs
 *.log
