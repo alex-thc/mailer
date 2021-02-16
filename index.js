@@ -36,6 +36,7 @@ async function sendMail({origEmail, toEmail, subject, html}){
       from: '"MongoDB Consulting" <ps-bot-noreply@mongodb.com>', // sender address
       replyTo: origEmail,
       to: toEmail, // list of receivers
+      cc: origEmail,
       subject: subject, // Subject line
       html: html, // html body
     });
