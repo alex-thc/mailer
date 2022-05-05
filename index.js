@@ -4,7 +4,7 @@ const Realm = require('realm-web');
 var CONFIG = require('./config-prod.json');
 var assert = require('assert');
 
-async function sendMail({origEmail, toEmail, subject, html}){
+async function sendMail({from, origEmail, toEmail, subject, html}){
   /*
     Accessing application's values:
     var x = context.values.get("value_name");
@@ -33,7 +33,7 @@ async function sendMail({origEmail, toEmail, subject, html}){
     // send mail with defined transport object
   try {
     let info = await transporter.sendMail({
-      from: '"MongoDB Consulting" <ps-bot-noreply@mongodb.com>', // sender address
+      from: from || '"MongoDB Consulting" <ps-bot-noreply@mongodb.com>', // sender address
       replyTo: origEmail,
       to: toEmail, // list of receivers
       cc: origEmail,
